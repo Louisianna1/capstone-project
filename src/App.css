@@ -4,25 +4,33 @@ body {
 
 .greenBlock {
   background-color: #495E57;
-  width: 100%;
 }
 
 .sectionContainer {
-  max-width: 80%;
+  max-width: 70%;
   margin: auto;
 }
 
 #header {
-  vertical-align: middle;
+  display: flex;
+  flex-direction: row;  
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#logoContainer {
+
 }
 
 nav {
-  display: inline;
+
 }
 
 nav ul {
   list-style-type: none;
-  display: inline;
+  padding: 0px;
 }
 
 nav ul li {
@@ -38,15 +46,30 @@ nav ul li a {
 }
 
 #footer {
+  display: flex;
+  flex-direction: row;
   color: white;
 }
 
-#footer > .heading {
+#footerLogoContainer {
+  width: 100%;
+}
+
+#footer .footerLinkContainer {
+  width: 100%;
+}
+
+#footer .footerLinkContainer .heading {
   font-weight: bold;
   font-size: 16px;
 }
 
-#footer > .link {
+#footer .footerLinkContainer ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#footer .footerLinkContainer ul li {
   font-weight: normal;
   font-size: 14px;
 }

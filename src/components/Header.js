@@ -6,7 +6,9 @@ const Header = () => {
     return ( 
         <div class="sectionContainer">
             <div id="header">
-                <img src={logo} alt="Little Lemon Logo"/>
+                <div id="logoContainer">
+                    <img src={logo} alt="Little Lemon Logo"/>
+                </div>
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
