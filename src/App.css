@@ -1,76 +1,358 @@
 body {
   font-family: Karla, Arial;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 42px;
+}
+
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 32px;
+}
+
+.sectionContainer {
+  max-width: 70%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;  
+  width: 100%;
+  justify-content: space-between;
+}
+
+#navbarSupportedContent .navbar-nav .nav-item .nav-link {
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#navbarSupportedContent {
+  justify-content: flex-end;
+}
+
+.yellow {
+  color: #F4CE14;
+}
+
+.white {
+  color: white;
+}
+
+.primaryButton {
+  background-color: #F4CE14;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em;
+  max-width: 200px;
+  border-radius: 12px;
+}
+
+#heroSection {
+  display: flex;
+  flex-direction: column;
+}
+
+#heroText {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  #heroSection {
+    flex-direction: row;
+  }
+}
+
+.splitWidth {
+  width: 100%;
+}
+
+.heroImage {
+  position: relative;
+  bottom: -20px;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+.yOffsetForHeroImage {
+  position: relative;
+  top: 40px;  
+}
+
+#highlightsSection, #testimonialsSection, #aboutSection, #footerSection {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+#highlightsHeader {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  #highlightsHeader {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+#highlightsCards {
+  margin: auto;
 }
 
 .greenBlock {
   background-color: #495E57;
 }
 
-.sectionContainer {
-  max-width: 70%;
-  margin: auto;
+.greyBlock {
+  background-color: #AAA7A7;
 }
 
-#header {
-  display: flex;
-  flex-direction: row;  
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 100%;
-  justify-content: space-between;
-}
-
-#logoContainer {
-
-}
-
-nav {
-
-}
-
-nav ul {
-  list-style-type: none;
+#highlightsCards .card {
+  background-color: #EDEFEE;
+  font-size: 14px;
   padding: 0px;
+  border: 2px;
+  border-color: #AAA7A7;
+  border-radius: 12px;
+  margin: 5px;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
-nav ul li {
+#testimonialsSection .card {
+  border-color: #AAA7A7;
+}
+
+.card-img-top {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  width: 100%;
+}
+
+.card-body {
+  background-color: #EDEFEE;
+}
+
+#testimonialsSection .card .card-body {
+  min-height: 200px;
+}
+
+#testimonialsSection .card-header, #testimonialsSection .card-body {
+  background-color: white;
+}
+
+.card-header {
+  min-height: 100px;
+}
+
+.card-title {
   display: inline;
-  padding-left: 30px;
-}
-
-nav ul li a {
-  color: black;
   font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
+  font-size: 16px;
 }
 
-#footer {
+.card-title.block {
+  display: block;
+}
+
+.card-subtitle {
+  color: #FFA500;
+  float: right;
+}
+
+.card-text {
+  color: #495E57;
+}
+
+#highlightsCards .card .card-footer {
+  background-color: #EDEFEE;
+  border-width: 0px;
+}
+
+.card-footer-text {
+  display: inline;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.deliveryIcon {
+  display: inline;
+  float: right;
+  height: 26px;
+}
+
+.centred {
+  align-self: center;
+}
+
+.starAwarded {
+  color: #4B732A;
+}
+
+.starShadow {
+  color: #DEDEDE;
+}
+
+.profileImage {
+  height: 25px;
+  margin-right: 15px;
+}
+
+.card-profile-name {
+  display: inline;
+}
+
+/* Display 1 review on small/mobile devices, 2 on medium e.g. tablet, 4 on large displays e.g. desktop */
+@media screen and (min-width: 768px) {
+  #carouselExampleControls .carousel-inner {
+    display: flex;
+  }
+  #carouselExampleControls .carousel-item {
+    display: block;
+    margin: 5px;
+    flex: 0 0 calc(100%/2)
+  }
+}
+@media (min-width: 1025px) {
+  #carouselExampleControls .carousel-item {
+    flex: 0 0 calc(100%/4)
+  }
+}
+
+#carouselExampleControls .carousel-inner {
+  padding: 1em;
+}
+
+#carouselExampleControls .carousel-control-prev,
+#carouselExampleControls .carousel-control-next {  
+background-color: #e1e1e1;
+width: 6vh;
+height: 6vh;
+border-radius: 50%;
+top: 50%;
+transform: translateY(-50%);
+opacity: .5;
+}
+
+#carouselExampleControls .carousel-control-prev:hover,
+#carouselExampleControls .carousel-control-next:hover {  
+opacity: 1;
+}
+
+/* When displaying multiple cards (reviews) also nudge the next arrow right by 20 pixels */
+@media screen and (min-width: 768px) {
+  #carouselExampleControls .carousel-control-next,
+  #carouselExampleControls .carousel-control-next:hover {  
+    transform: translateX(20px) translateY(-50%);
+  }
+}
+
+#aboutMainContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+#aboutText {
+  width: 100%;
+  display: block;
+}
+@media screen and (min-width: 1025px) {
+  #aboutMainContent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.ownersImagesDiv {
+  width: 100%;
+}
+/* On small devices display under text stacked one below the other */
+.ownersImage1, .ownersImage2 {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+/* On tablets / medium displays display the images side by side beneath text */
+@media screen and (min-width: 768px) {
+  .ownersImagesDiv {
+    width: 100%;    
+  }
+  .ownersImage1, .ownersImage2 {
+    height: 150px;
+    width: 225px;
+    margin-right: 10px;
+  }
+}
+/* On wider devices display overlapping but to right of text */
+@media screen and (min-width: 1025px) {
+  .ownersImagesDiv {
+    position: relative;
+    min-width: 450px;
+  }
+  .ownersImage1 {
+    position: absolute;
+    right: 0px;
+    bottom: 175px;
+    z-index: 1;
+  }
+  .ownersImage2 {
+    position: absolute;
+    right: 200px;
+    bottom: 50px;
+    z-index: 0;
+  }
+}
+
+#footerSection {
   color: white;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  #footerSection {
+    flex-direction: row;
+  }
+}
+
+.footerLink, .footerLink:hover, .footerLink:visited {
+  color: white;
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.5;
 }
 
 #footerLogoContainer {
   width: 100%;
 }
 
-#footer .footerLinkContainer {
+#footerSection .footerLinkContainer {
   width: 100%;
+  vertical-align: top;
 }
 
-#footer .footerLinkContainer .heading {
+#footerSection .footerLinkContainer .heading {
   font-weight: bold;
   font-size: 16px;
+  display: block;
 }
 
-#footer .footerLinkContainer ul {
+#footerSection .footerLinkContainer ul {
   list-style-type: none;
   padding-left: 0px;
+  vertical-align: text-top;
 }
 
-#footer .footerLinkContainer ul li {
-  font-weight: normal;
-  font-size: 14px;
-}
+
+
 

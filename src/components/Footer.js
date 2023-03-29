@@ -1,48 +1,52 @@
-import React from "react"; 
+import { Fragment, React } from "react"; 
+import { Routes, Route, Link } from 'react-router-dom';
+
 import footerLogo from "./../images/little-lemon-logo-mono.jpg"
 
 const Footer = () => { 
  
     return ( 
-        <div class="greenBlock">
-            <div class="sectionContainer">
-                <div id="footer">
-                    <div id="footerLogoContainer">
-                        <img src={footerLogo} height="70%" alt="Footer logo"/>
-                    </div>
+        <Fragment>
+            <div className="greenBlock">
+                <div className="sectionContainer">
+                    <div id="footerSection">
+                        <div id="footerLogoContainer">
+                            <img src={footerLogo} height="70%" alt="Footer logo"/>
+                        </div>
 
-                    <div class="footerLinkContainer">
-                        <p class="heading">Doormat Navigation</p>
-                        <ul>
-                            <li><a>Home</a></li>
-                            <li><a>About</a></li>
-                            <li><a>Menu</a></li>
-                            <li><a>Reservations</a></li>
-                            <li><a>Order Online</a></li>
-                            <li><a>Login</a></li>
-                        </ul>
-                    </div>
+                        <div className="footerLinkContainer">
+                            <p className="heading">Navigation</p>
+                            <ul>
+                                <Link to="/" className="footerLink">Home</Link>
+                                <Link to="/about" className="footerLink">About</Link>
+                                <Link to="/menu" className="footerLink">Menu</Link>
+                                <Link to="/reservations" className="footerLink">Reservations</Link>
+                                <Link to="/order-online" className="footerLink">Order Online</Link>
+                                <Link to="/login" className="footerLink">Login</Link>
+                            </ul>
+                        </div>
 
-                    <div class="footerLinkContainer">
-                        <p class="heading">Contact</p>
-                        <ul>
-                            <li><a>[Address]</a></li>
-                            <li><a>[Phone number]</a></li>
-                            <li><a>[Email]</a></li>
-                        </ul>
-                    </div>
+                        <div className="footerLinkContainer">
+                            <p className="heading">Contact</p>
+                            <ul>
+                                <li className="footerLink">25 High Street, Little Italy, Chicago, Illinois</li>
+                                <li className="footerLink">773.878.1234</li>
+                                <li className="footerLink">contact@little-lemon-chicago.com</li>
+                            </ul>
+                        </div>
 
-                    <div class="footerLinkContainer">
-                        <p class="heading">Social Media Links</p>
-                        <ul>
-                            <li><a>Facebook</a></li>
-                            <li><a>Instagram</a></li>
-                            <li><a>FoodTube</a></li>
-                        </ul>
+                        <div className="footerLinkContainer">
+                            <p className="heading">Social Media Links</p>
+                            <ul>
+                                <li className="footerLink"><a className="footerLink" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                                <li className="footerLink"><a className="footerLink" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                                <li className="footerLink"><a className="footerLink" href="https://www.youtube.com/hashtag/foodtube" target="_blank">#foodtube on YouTube</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Fragment>
     ); 
 }; 
 
