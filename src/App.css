@@ -53,6 +53,7 @@ h2 {
   padding: 1em;
   max-width: 200px;
   border-radius: 12px;
+  border-style: none; /* Prevent automatic black outset border on input elements */
 }
 
 #heroSection {
@@ -60,7 +61,7 @@ h2 {
   flex-direction: column;
 }
 
-#heroText {
+#heroText, #reservationsBannerText {
   margin-top: 10px;
   margin-right: 10px;
 }
@@ -310,6 +311,65 @@ opacity: 1;
     bottom: 50px;
     z-index: 0;
   }
+}
+
+#reservationsBanner {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+.reservationsBannerImage {
+  width: 100%;
+  height: auto;
+  }
+@media screen and (min-width: 576px) {
+  #reservationsBanner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .reservationsBannerImage {
+  width: 100%;
+  height: auto;
+  }
+}
+
+#tableBookingForm {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -40px;
+  gap: 20px;
+  background-color: #EDEFEE;
+  border: 2px;
+  border-color: #AAA7A7;
+  border-radius: 12px;
+  margin: 5px;
+  padding: 20px;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);  
+}
+@media screen and (min-width: 768px) {
+    #tableBookingForm {
+    flex-direction: row;
+  }
+
+  .formFields {
+    width: 50%;
+  }
+
+  #formSubmissionDiv {
+    display: flex;
+    justify-content: flex-end;
+  }
+} 
+
+#tableBookingForm .Field {
+  padding-bottom: 24px;
+}
+
+#tableBookingForm label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: block;
 }
 
 #footerSection {
