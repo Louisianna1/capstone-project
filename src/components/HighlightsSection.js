@@ -41,7 +41,7 @@ const HighlightsSection = () => {
                             <h1>Specials</h1>
                         </div>
                         <div>
-                            <p className="primaryButton">Online menu</p>
+                            <p className="button primaryButton">Online menu</p>
                         </div>
                     </div>
                     <div id="highlightsCards">

@@ -44,8 +44,7 @@ h2 {
   color: white;
 }
 
-.primaryButton {
-  background-color: #F4CE14;
+.button {  
   color: black;
   font-size: 18px;
   font-weight: bold;
@@ -55,6 +54,15 @@ h2 {
   border-radius: 12px;
   border-style: none; /* Prevent automatic black outset border on input elements */
 }
+
+.button.primaryButton {
+  background-color: #F4CE14;
+}
+
+.button.disabledButton {
+  background-color: #C5C7C6;
+}
+
 
 #heroSection {
   display: flex;

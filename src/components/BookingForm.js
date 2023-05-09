@@ -1,16 +1,26 @@
 import { Fragment, useEffect, useState } from 'react';
 
 const BookingForm = (props) =>  {
-    const [bookingDate, setBookingDate] = useState(new Date().toString());
-    const [bookingTime, setBookingTime] = useState("");
-    const [bookingTotalGuests, setBookingTotalGuests] = useState("");
-    const [bookingOccasion, setBookingOccasion] = useState("");
+
+    const selectPlaceholder = "- Select -";
+
+    const [bookingDate, setBookingDate] = useState("");
+    const [bookingTime, setBookingTime] = useState(selectPlaceholder);
+    const [bookingTotalGuests, setBookingTotalGuests] = useState(1);
+    const [bookingOccasion, setBookingOccasion] = useState(selectPlaceholder);
 
     
     const handleDateSelection = (dateStringValue) => {
-      setBookingDate(dateStringValue);
+      console.log("Booking date =" + bookingDate);
       let selectedDate = new Date(dateStringValue);
       props.updateAvailableTimes({ date: selectedDate });
+    }
+
+    const validateFormFields = () => {
+      return (bookingDate && 
+              bookingTime != selectPlaceholder && 
+              bookingTotalGuests && 
+              bookingOccasion != selectPlaceholder);
     }
 
     const handleSubmit = (event) => {
@@ -20,6 +30,21 @@ const BookingForm = (props) =>  {
       props.submitForm(formData);
     };
 
+    const handleTotalGuestsKeyDown = (event) => {
+      // Do not respond to any keyboard button clicks other than up and down
+      event.preventDefault();
+    }
+
+    const tomorrow = () => {
+      // Get today's date
+      let today = new Date();
+      // Change the date by adding 1 to it (today + 1 = tomorrow)
+      today.setDate(today.getDate() + 1);
+      // return yyyy-mm-dd format
+      let tomorrow = today.toISOString().split('T')[0];
+
+      return tomorrow;
+    };  
 
 
     return (
@@ -32,12 +57,14 @@ const BookingForm = (props) =>  {
               <div className="formFields">
                 <div className="Field">
                   <label htmlFor="res-date">Choose date</label>
-                  <input type="date" id="res-date" name="res-date" value={bookingDate} onChange={e => handleDateSelection(e.target.value) } />
+                  <input type="date" id="res-date" name="res-date" aria-label="Booking date" required min={tomorrow()} value={bookingDate} 
+                    onChange={e => { setBookingDate(e.target.value); handleDateSelection(e.target.value); } } />
                 </div>
                 
                 <div className="Field">
                   <label htmlFor="res-time">Choose time</label>
-                  <select id="res-time" name="res-time" value={bookingTime} onChange={e => setBookingTime(e.target.value) }>
+                  <select id="res-time" name="res-time" aria-label="Booking time" required value={bookingTime} onChange={e => setBookingTime(e.target.value) }>
+                    <option key="placeholder" value={selectPlaceholder}>{selectPlaceholder}</option>
                     {props.availableTimes.availableTimes.map((time) => <option key={time} value={time}>{time}</option>)}
                   </select>
                 </div>
@@ -46,19 +73,20 @@ const BookingForm = (props) =>  {
               <div className="formFields">
                 <div className="Field">
                   <label htmlFor="guests">Number of guests</label>
-                  <input type="number" id="guests" name="guests" placeholder="1" min="1" max="10" value={bookingTotalGuests} onChange={e => setBookingTotalGuests(e.target.value) } />
+                  <input type="number" id="guests" name="guests" aria-label="Number of guests" required placeholder="1" min="1" max="10" value={bookingTotalGuests} onKeyDown={(e) => handleTotalGuestsKeyDown(e)} onChange={e => setBookingTotalGuests(e.target.value) } />
                 </div>  
                 
                 <div className="Field">
                   <label htmlFor="occasion">Occasion</label>
-                  <select id="occasion" name="occasion" value={bookingOccasion} onChange={e => setBookingOccasion(e.target.value) }>
-                      <option>Birthday</option>
-                      <option>Anniversary</option>
+                  <select id="occasion" name="occasion" aria-label="Occasion" required value={bookingOccasion} onChange={e => setBookingOccasion(e.target.value) }>
+                    <option key="placeholder" value={selectPlaceholder}>{selectPlaceholder}</option>                    
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
                   </select>
                 </div>
   
                 <div id="formSubmissionDiv">
-                  <input type="submit" className="primaryButton" value="Book table" />
+                  <input id="submissionButton" data-testid="submissionButton" name="submissionButton" aria-label="submission button" type="submit" disabled={!validateFormFields()} className={!validateFormFields() ? "button disabledButton" : "button primaryButton"} value="Book table" />
                 </div>
               </div>            
             </form>
