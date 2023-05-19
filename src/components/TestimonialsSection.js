@@ -3,13 +3,13 @@ import $ from 'jquery';
 import { Carousel } from 'bootstrap';
 
 import Review from './Review';
-
+/* ./../images/profile-male-1.jpg */
 const reviewsData = [
     {
         id: 1,
         rating: 5,
         title: "Authentic Italian!",
-        profileImage: require('./../images/profile-male-1.jpg'),
+        profileImage: "profile-male-1.jpg",
         reviewerName: "Billy Lockwood",
         reviewText: "The best Italian restaurant in Chicago.",
     },
@@ -17,7 +17,7 @@ const reviewsData = [
         id: 2,
         rating: 4,
         title: "A must visit",
-        profileImage: require('./../images/profile-female-1.jpg'),
+        profileImage: "profile-female-1.jpg",
         reviewerName: "Hayley Heart",
         reviewText: "We stumbled on this restaurant by lucky chance and have visited many times since.",
     },
@@ -25,7 +25,7 @@ const reviewsData = [
         id: 3,
         rating: 4,
         title: "Fab 50th",
-        profileImage: require('./../images/profile-female-2.jpg'),
+        profileImage: "profile-female-2.jpg",
         reviewerName: "Coral Singh",
         reviewText: "We booked the function room for my mum's 50th birthday and everything was superb.",
     },
@@ -33,7 +33,7 @@ const reviewsData = [
         id: 4,
         rating: 5,
         title: "Hidden gem!",
-        profileImage: require('./../images/profile-male-2.jpg'),
+        profileImage: "profile-male-2.jpg",
         reviewerName: "Peter Ross",
         reviewText: "A small, unimposing building on a side street but undoubtedly the finest restaurant in Chicago!",
     },
@@ -41,7 +41,7 @@ const reviewsData = [
         id: 5,
         rating: 5,
         title: "Nonna's best secret!",
-        profileImage: require('./../images/profile-female-3.jpg'),
+        profileImage: "profile-female-3.jpg",
         reviewerName: "Sofia Coppola",
         reviewText: "Having lived in Italy most of my life, this place reminds me of my nonna's best dishes! Love this place!",
     },
@@ -49,7 +49,7 @@ const reviewsData = [
         id: 6,
         rating: 4,
         title: "Superba!",
-        profileImage: require('./../images/profile-male-3.jpg'),
+        profileImage: "profile-male-3.jpg",
         reviewerName: "George Fonti",
         reviewText: "This place is perfect in every way - excellent food, ambience and service!",
     },
@@ -57,7 +57,7 @@ const reviewsData = [
         id: 7,
         rating: 5,
         title: "The best tiramisu in town",
-        profileImage: require('./../images/profile-female-4.jpg'),
+        profileImage: "profile-female-4.jpg",
         reviewerName: "Louise Yufit",
         reviewText: "Simply the tastiest Italian food, especially the tiramisu! Yum.",
     },
@@ -65,7 +65,7 @@ const reviewsData = [
         id: 8,
         rating: 5,
         title: "Buon appetito!",
-        profileImage: require('./../images/profile-male-4.jpg'),
+        profileImage: "profile-male-4.jpg",
         reviewerName: "Cedric Domique",
         reviewText: "Perfection with every visit, enjoy!",
     },

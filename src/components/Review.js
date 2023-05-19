@@ -9,6 +9,8 @@ const Review = (props) => {
 
     let carouselItemClass = (props.id === 1 ? "carousel-item active" : "carousel-item");
 
+    let relativeProfileImage = require("./../images/" + props.profileImage);
+
     return (
         <div className={carouselItemClass}>
             <div className="card">
@@ -17,7 +19,7 @@ const Review = (props) => {
                     <h5 className="card-title block">{props.title}</h5>
                 </div>
                 <div className="card-body">
-                    <img src={props.profileImage} alt="profile" className="profileImage" />
+                    <img src={relativeProfileImage} alt="profile" className="profileImage" />
                     <span className="card-profile-name">{props.reviewerName}</span>
                     <p className="card-text">{props.reviewText}</p>
                 </div>

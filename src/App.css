@@ -67,6 +67,7 @@ h2 {
 #heroSection {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 #heroText, #reservationsBannerText {
@@ -87,9 +88,10 @@ h2 {
 .heroImage {
   position: relative;
   bottom: -20px;
+  right: 0px;
   border-radius: 12px;
   width: 100%;
-  height: auto;
+  max-height: 500px;
 }
 
 .yOffsetForHeroImage {
@@ -310,13 +312,13 @@ opacity: 1;
   .ownersImage1 {
     position: absolute;
     right: 0px;
-    bottom: 175px;
+    bottom: 150px;
     z-index: 1;
   }
   .ownersImage2 {
     position: absolute;
     right: 200px;
-    bottom: 50px;
+    bottom: 25px;
     z-index: 0;
   }
 }
