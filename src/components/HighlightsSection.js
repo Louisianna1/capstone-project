@@ -1,4 +1,5 @@
 import { Fragment, React } from "react"; 
+import { Link } from 'react-router-dom';
 import Dish from './Dish';
 
 import './../App.css';
@@ -41,7 +42,7 @@ const HighlightsSection = () => {
                             <h1>Specials</h1>
                         </div>
                         <div>
-                            <p className="button primaryButton">Online menu</p>
+                            <p className="button primaryButton"><Link to="/order-online">Online menu</Link></p>
                         </div>
                     </div>
                     <div id="highlightsCards">

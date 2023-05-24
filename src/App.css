@@ -49,10 +49,16 @@ h2 {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
   padding: 1em;
   max-width: 200px;
   border-radius: 12px;
   border-style: none; /* Prevent automatic black outset border on input elements */
+}
+
+.button a, .button a:hover, .button link, .button a:active, .button a:visited {
+  text-decoration: none;
+  color: black;
 }
 
 .button.primaryButton {
