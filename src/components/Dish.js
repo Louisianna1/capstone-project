@@ -4,16 +4,16 @@ import bikeIcon from "../images/bike2.jpg";
 
 import './../App.css';
 
-const Dish = ({ Name, Image, Price, Description }) => { 
+const Dish = ({ name, image, price, description }) => { 
 
-    let relativeImage = require("./../images/" + Image);
+    let relativeImage = require("./../images/" + image);
     return (
         <div className="card">
-            <img className="card-img-top" src={relativeImage} alt={Name} />
+            <img className="card-img-top" src={relativeImage} alt={name} />
             <div className="card-body">
-                <h5 className="card-title">{Name}</h5>
-                <span className="card-subtitle">{Price}</span>
-                <p className="card-text">{Description}</p>
+                <h5 className="card-title">{name}</h5>
+                <span className="card-subtitle">{price}</span>
+                <p className="card-text">{description}</p>
             </div>
             <div className="card-footer">
                 <h6 className="card-footer-text">Order delivery</h6>

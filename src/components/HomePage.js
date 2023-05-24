@@ -4,12 +4,12 @@ import HighlightsSection from './HighlightsSection';
 import TestimonialsSection from './TestimonialsSection';
 import AboutSection from './AboutSection';
 
-const HomePage = () =>  {
+const HomePage = (props) =>  {
   return (
     <Fragment>
         <HeroSection />
         <HighlightsSection />
-        <TestimonialsSection />
+        <TestimonialsSection reviewsFromAPI={props.reviewsFromAPI} />
         <AboutSection />
     </Fragment>
   );

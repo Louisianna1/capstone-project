@@ -15,6 +15,8 @@ import './App.css';
 function Main() {
 
   const [availableTimesFromAPI, setAvailableTimesFromAPI] = useState({ availableTimes: [] });
+  const [reviewsFromAPI, setReviewsFromAPI] = useState([]);
+
 
   function seededRandom(seed) {
       var m = 2**35 - 31;
@@ -46,14 +48,21 @@ function Main() {
       return true;
   };
 
-  function initializeTimes () {
+  function initializeTimes() {
     const newTimesObject = availableTimesFromAPI;
     newTimesObject.availableTimes = fetchAPI(new Date());
     setAvailableTimesFromAPI(newTimesObject);
   }
 
+  function fetchReviews() {
+    fetch("https://hrnrel7ri5llv3thvyy7sn24sa0myyzw.lambda-url.eu-west-2.on.aws/api/Reviews/get")
+    .then((response) => response.json())
+    .then((data) => { setReviewsFromAPI(data); });
+  };
+
   useEffect(() => {
     initializeTimes();
+    fetchReviews();
   }, []); 
 
   const updateTimes = (availableTimes, selectedDate) => {
@@ -82,7 +91,7 @@ function Main() {
 
       <main>        
           <Routes> 
-            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/" element={<HomePage reviewsFromAPI={reviewsFromAPI} />}></Route>
             <Route path="/about" element={<AboutPage />}></Route>
             <Route path="/menu" element={<MenuPage />}></Route>
             <Route path="/reservations" element={<BookingPage availableTimes={availableTimes} updateAvailableTimes={dispatch} submitForm={submitForm}  />}></Route>
