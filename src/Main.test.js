@@ -153,7 +153,7 @@ test('Initially (after useEffect() hook code completes) the booking form renders
   expect(bookingTimeField.value).toBe("- Select -");
 
   const bookingTotalGuestsField = screen.getByLabelText(/Number of guests/);
-  expect(bookingTotalGuestsField.value).toBe("1");
+  expect(bookingTotalGuestsField.value).toBe("- Select -");
 
   const bookingOccasionField = screen.getByLabelText(/Occasion/);
   expect(bookingOccasionField.value).toBe("- Select -");
@@ -274,7 +274,7 @@ test('The Booking Time field must be populated for the form submission button to
 });
 
 
-test('The Booking Total Guests field defaults to 1 and therefore doesnt have to be set explicitly.', () => {
+test('The Booking Total Guests field defaults to "- Select -" and therefore must be set explicitly.', () => {
 
   const {rerender} = render(
     <BookingPage availableTimes={availableTimes} updateAvailableTimes={dummyDispatch} submitForm={dummySubmitForm} />
@@ -296,9 +296,16 @@ test('The Booking Total Guests field defaults to 1 and therefore doesnt have to 
   const bookingOccasionField = screen.getByLabelText(/Occasion/);
   fireEvent.change(bookingOccasionField, { target: { value: "Anniversary" } });
 
-  /* Check that the submit button is enabled owing to the Booking Total Guests field defaulting to 1 */
+  /* Check that the submit button is disabled owing to the Booking Total Guests field defaulting to "- Select -" */
   let submitButton = screen.getByTestId(/submissionButton/);
-  expect(submitButton).not.toBeDisabled();
+  expect(submitButton).toBeDisabled();
+
+   /* Populate the Booking Total Guests field and check that the submission button is now enabled */
+   const bookingTotalGuestsField = screen.getByLabelText(/Number of guests/);
+   fireEvent.change(bookingTotalGuestsField, { target: { value: "2" } });
+ 
+   submitButton = screen.getByTestId(/submissionButton/);
+   expect(submitButton).not.toBeDisabled();
 
 });
 

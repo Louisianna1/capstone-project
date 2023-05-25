@@ -382,6 +382,10 @@ opacity: 1;
   padding-bottom: 24px;
 }
 
+#tableBookingForm .Field .formFieldControl {
+  width: 200px;
+}
+
 #tableBookingForm label {
   margin-bottom: 8px;
   font-size: 14px;
