@@ -28,7 +28,6 @@ function Main() {
   }
 
   function fetchAPI(date) {
-      console.log("fetchAPI called with date " + date);
       let result = [];
       let random = seededRandom(date.getDate());
 

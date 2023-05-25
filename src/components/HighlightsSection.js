@@ -27,7 +27,7 @@ const HighlightsSection = () => {
                             <h1>Specials</h1>
                         </div>
                         <div>
-                            <p className="button primaryButton"><Link to="/order-online">Online menu</Link></p>
+                            <Link className="hyperinkForButton" to="/order-online"><p className="button primaryButton">Online menu</p></Link>
                         </div>
                     </div>
                     <div id="highlightsCards">

@@ -61,8 +61,6 @@ class TestimonialsSection extends React.Component {
     }
 
     render() {
- 
-        console.log("Rendering TestimonialsSection with passed in state = " + this.props.reviewsFromAPI);
 
         return ( 
             <div className="greyBlock">

@@ -11,7 +11,6 @@ const BookingForm = (props) =>  {
 
     
     const handleDateSelection = (dateStringValue) => {
-      console.log("Booking date =" + bookingDate);
       let selectedDate = new Date(dateStringValue);
       props.updateAvailableTimes({ date: selectedDate });
     }
